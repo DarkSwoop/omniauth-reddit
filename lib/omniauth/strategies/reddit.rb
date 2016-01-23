@@ -12,7 +12,7 @@ module OmniAuth
 
       option :client_options, {
         site: 'https://oauth.reddit.com',
-        token_url: 'https://ssl.reddit.com/api/v1/access_token'
+        token_url: 'https://www.reddit.com/api/v1/access_token'
       }
 
       uid { raw_info['id'] }
@@ -42,7 +42,7 @@ module OmniAuth
       MOBILE_USER_AGENTS =  'webos|ipod|iphone|mobile'
 
       def request_phase
-        options[:client_options].authorize_url = mobile_request? ? 'https://ssl.reddit.com/api/v1/authorize.compact' : 'https://ssl.reddit.com/api/v1/authorize'
+        options[:client_options].authorize_url = mobile_request? ? 'https://www.reddit.com/api/v1/authorize.compact' : 'https://www.reddit.com/api/v1/authorize'
         super
       end
 
