@@ -51,6 +51,9 @@ module OmniAuth
         ua.downcase =~ Regexp.new(MOBILE_USER_AGENTS)
       end
 
+      def callback_url
+        full_host + script_name + callback_path
+      end
 
     end
   end
